@@ -1,0 +1,388 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-blue: #037bc0;
+    --color-dark-blue: #005485;
+    --color-green: #8cbc00;
+    --font-family-text: 'Raleway', sans-serif;
+    --font-family-titles: 'Playfair Display', serif;
+}
+body {
+    font-family: var(--font-family-text);
+}
+
+/* ------------------------------------------------HEADER y NAV-------------------------------------------------------- */
+header{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: space-between; */
+    text-align: center;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.nombre-pagina {
+    margin-top: 68px;
+    margin-bottom: 40px;
+    font-size: 25px;
+}
+.blue-text {
+    color: var(--color-blue);
+}
+h1, h2, h3 {
+    font-family: var(--font-family-titles);
+}
+
+.b-navegacion ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap:10px;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 1200px;
+    /* font-family: var(--font-family-text); */
+    padding: 26px 0;
+}
+
+.list {
+    list-style: none;
+}
+.link {
+    text-decoration: none;
+    color: var(--color-black);
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------------BANNER----------------------------------------------------------- */
+.banner-principal {
+    background-image: url('img/principal.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 550px;
+}
+
+.seccion {
+    display: block;
+    margin: 0 auto;
+    padding: 50px 0;
+    max-width: 1200px;
+}
+
+h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 12px 0;
+    margin-bottom: 20px;
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------CATEGORIAS------------------------------------------------------------- */
+img {
+    width: 100%;
+}
+.categorias {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+    align-items: center;
+}
+.categoria-item { /* Si no pongo esto, aparece un pequeño gap entre la imagen y el nombre de la Categoría (No se por qué, no le he puesto ningun gap y cuando trato de seleccionarlo no reconoce ningun elemento, eso como si no hubiera nada ahi ._.) */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.categoria-item a{
+    padding: 20px;
+    font-size: 20px;
+    display: block;
+    text-align: center;
+}
+.categoria-item a:hover {
+    background-color: var(--color-blue);
+    border-bottom-right-radius: 10px;
+    color: var(--color-white);
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+/* --------------------------------------------------SOBRE NOSOTROS---------------------------------------------------- */
+.seccion-nosotros {
+    display: flex;
+    background-image: url('img/nosotros.jpg');
+    background-size: 1600px;
+    background-position: left;
+    /* width: 100%; */
+    height: 540px;
+}
+.seccion-nosotros > div {
+    width: 50%;
+}
+.sobre-nosotros{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    display: flex; /* Esto no me deja reciclarlo para los cuadros azules de abajo */
+    padding: 20px;
+}
+.sobre-nosotros-texto{
+    margin: auto 30px;
+    width: 550px;
+    height: 350px;
+    padding: 50px;
+}
+.sobre-nosotros h2 {
+    text-align: left;
+}
+p {
+    line-height: 2;
+}
+/* -------------------------------------------------------------------------------------------------------------------- */
+
+
+/* -----------------------------------------------NUESTROS PRODUCTOS--------------------------------------------------- */
+.productos {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr)); /* Con minmax se obliga a que las celdas midan lo mismo :o */
+    /* grid-template-rows: repeat(3, 400px); */
+    gap: 20px;
+}
+
+.blue-box {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: 20px;
+    text-align: center;
+    line-height: 2;
+}
+
+.product-hor {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    height: 430px;
+}
+.product-ver {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 600px;
+}
+.product-ver > div {
+    height: 280px;
+}
+
+.product-1 {
+    grid-column: 1/7;
+}
+.product-1 img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+.precio {
+    font-weight: 900;
+    font-size: 28px;
+}
+
+.agregar-carrito-btn {
+    background-color: var(--color-green);
+    font-weight: 900;
+    font-size: 16px;
+    padding: 10px;
+    text-align: center;
+    color: var(--color-white);
+    line-height: 2;
+    display: block; /* Esto permite que el line-height le afecte y cree un mayor espacio entre las letras */
+    transition: background-color 0.5s ease;
+}
+.agregar-carrito-btn:hover {
+    background-color: #769c02;
+    transition: background-color 0.5s ease; /* Esto es para que al poner el mouse encima cambie de color lentamente */
+}
+
+.product-ver img {
+    object-fit: cover;
+    object-position: 0 -50px;
+    overflow: clip;
+}
+.product-2 {
+    grid-column: 1/4;
+    grid-row: 2/3;
+}
+.product-3 {
+    grid-column: 4/7;
+    grid-row: 2/3;
+}
+.product-4 {
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+.product-5 {
+    grid-column: 3/5;
+    grid-row: 3/4;
+}
+.product-6 {
+    grid-column: 5/7;
+    grid-row: 3/4;
+}
+
+.product-4 img, .product-5 img, .product-6 img {
+    object-fit: cover;
+    object-position: 0 0px;
+    overflow: clip;
+    display: block; /* Esto eliminó un pequeño gap de 1pixel que no lograba quitar */
+}
+
+
+footer {
+    border-top: 1px solid #e1e1e1;
+    padding-top: 50px;
+}
+footer > div {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    line-height: 2;
+}
+
+.rights {
+    margin-top: 50px;
+    margin-bottom: 16px;
+    display: block;
+    text-align: center;
+}
+
+/* -----------------------------------------------PAGINA: NOSOTROS--------------------------------------------------- */
+.nosotros {
+    display: flex;
+    gap: 40px;
+}
+.nosotros div {
+    flex: 1;
+    /* Para centrar el texto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.nosotros p, .blog p {
+    margin: 16px 0;
+}
+
+/* -----------------------------------------------PAGINA: BLOG------------------------------------------------------- */
+.blog {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 40px;
+}
+.blog h2 {
+    text-align: left;
+}
+.blog img {
+    display: block; /* Esto quita el pequeño gap que hay entre la imagen y el div */
+}
+
+.creditos {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    /* margin: 20px 0; */
+}
+article {
+    padding-bottom: 40px;
+}
+.articulo-texto {
+    padding: 20px;
+}
+.articulo-texto a {
+    width: 300px;
+}
+.articulo-blog {
+    border-bottom: 2px solid #e1e1e1;
+}
+.articulo-blog:last-of-type { /* Con esto puedo darle instrucciones al ultimo elemento de un grupo con esta clase, en este caso estoy poniendo que no tenga línea al final */
+    border-bottom: none;
+}
+aside {
+    line-height: 2;
+}
+aside ul {
+    margin: 16px 0;
+    padding-left: 40px;
+}
+
+/* -----------------------------------------------PAGINA: GALERÏA------------------------------------------------------- */
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 400px);
+    gap: 20px;
+}
+.galeria div {
+    overflow: hidden;
+}
+.galeria img {
+    height: 100%; /* Importante para que las imagenes no se salgan */
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* -----------------------------------------------PAGINA: CONTACTO------------------------------------------------------- */
+legend {
+    background-color: var(--color-dark-blue);
+    color: var(--color-white);
+    text-align: center;
+    font-weight: 900;
+    width: 95%;
+    padding: 10px 0;
+}
+form {
+    width: 600px;
+    margin: 0 auto;
+    line-height: 2;
+}
+
+label {
+    width: 100px;
+    margin-left: 8px;
+}
+
+.form-contactanos input[type="text"],
+.form-contactanos textarea,
+.form-contactanos select {
+    width: 480px;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    font-size: 16px;
+}
+
+.form-contactanos fieldset > div {
+    display: flex;
+    margin: 25px 10px 25px 0;
+}
+
+.form-contactanos fieldset {
+    padding: 20px 0;
+    margin: 20px 0;
+}
+.form-contactanos textarea {
+    height: 225px;
+}
+
+.form-contactanos button {
+    border: none;
+    line-height: 1;
+}
